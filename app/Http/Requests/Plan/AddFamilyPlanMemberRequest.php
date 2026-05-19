@@ -14,9 +14,9 @@ class AddFamilyPlanMemberRequest extends FormRequest
     public function rules(): array
     {
         return [
-            holder_external_key => [required, email],
-            subscription_id => [required, integer],
-            external_key => [required, email],
+            'holder_external_key' => ['required', 'email'],
+            'subscription_id' => ['required', 'integer'],
+            'external_key' => ['required', 'email'],
         ];
     }
 }

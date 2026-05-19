@@ -18,3 +18,7 @@ Route::prefix('subscription-score')->group(function () {
     Route::post('/find', [SubscriptionScoreController::class, 'findAvailable']);
     Route::post('/use', [SubscriptionScoreController::class, 'use']);
 });
+
+Route::get('/test', function () {
+    return response()->json(['message' => 'API is working']);
+});

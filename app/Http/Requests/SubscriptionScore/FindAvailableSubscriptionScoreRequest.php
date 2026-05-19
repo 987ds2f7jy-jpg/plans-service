@@ -14,9 +14,9 @@ class FindAvailableSubscriptionScoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            plan_id => [required, integer],
-            external_key => [required, email],
-            specialization_id => [required, integer],
+            'plan_id' => ['required', 'integer'],
+            'external_key' => ['required', 'email'],
+            'specialization_id' => ['required', 'integer'],
         ];
     }
 }

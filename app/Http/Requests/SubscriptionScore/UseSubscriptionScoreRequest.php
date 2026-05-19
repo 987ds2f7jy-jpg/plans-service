@@ -14,7 +14,7 @@ class UseSubscriptionScoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            score_id => [required, integer],
+            'score_id' => ['required', 'integer'],
         ];
     }
 }
