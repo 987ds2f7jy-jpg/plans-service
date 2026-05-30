@@ -28,6 +28,8 @@ use App\Services\Payment\ExternalPaymentApiService;
 use App\Services\Payment\ExternalPaymentApiServiceInterface;
 use App\Services\Payment\PaymentService;
 use App\Services\Payment\PaymentServiceInterface;
+use App\Services\Plan\ExternalPlanActivationService;
+use App\Services\Plan\ExternalPlanActivationServiceInterface;
 use App\Services\Plan\FamilyPlanService;
 use App\Services\Plan\FamilyPlanServiceInterface;
 use App\Services\Plan\PsychologyPlanService;
@@ -45,6 +47,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(PsychologyPlanServiceInterface::class, PsychologyPlanService::class);
         $this->app->bind(WeightLossPlanServiceInterface::class, WeightLossPlanService::class);
         $this->app->bind(FamilyPlanServiceInterface::class, FamilyPlanService::class);
+        $this->app->bind(ExternalPlanActivationServiceInterface::class, ExternalPlanActivationService::class);
         $this->app->bind(SubscriptionScoreServiceInterface::class, SubscriptionScoreService::class);
         $this->app->bind(ExternalPaymentApiServiceInterface::class, ExternalPaymentApiService::class);
         $this->app->bind(PaymentServiceInterface::class, PaymentService::class);

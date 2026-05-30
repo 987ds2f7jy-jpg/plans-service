@@ -1,13 +1,17 @@
 <?php
 
 use App\Http\Controllers\Plan\PlanController;
+use App\Http\Controllers\Plan\ExternalPlanActivationController;
 use App\Http\Controllers\PaymentWebhookController;
 use App\Http\Controllers\SubscriptionScore\SubscriptionScoreController;
+use App\Http\Middleware\EnsureInternalApiKey;
 use Illuminate\Support\Facades\Route;
 
 Route::post('/payments/webhook', PaymentWebhookController::class);
 
 Route::prefix('plans')->group(function () {
+    Route::post('/external/activate', ExternalPlanActivationController::class)
+        ->middleware(EnsureInternalApiKey::class);
     Route::post('/psychology/subscribe', [PlanController::class, 'subscribePsychologyPlan']);
     Route::post('/weight-loss/subscribe', [PlanController::class, 'subscribeWeightLossPlan']);
     Route::post('/family/subscribe', [PlanController::class, 'subscribeFamilyPlan']);

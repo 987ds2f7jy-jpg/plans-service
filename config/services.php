@@ -45,4 +45,8 @@ return [
         'webhook_url' => env('PAYMENT_API_WEBHOOK_URL'),
     ],
 
+    'internal_api' => [
+        'key' => env('INTERNAL_API_KEY'),
+    ],
+
 ];
